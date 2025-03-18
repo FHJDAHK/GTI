@@ -417,6 +417,31 @@ elif page == "EDA":
         plt.title("Correlation Heatmap: Terrorism Score vs Severity")
          
         st.pyplot(fig)
+         
+        st.markdown("""
+          <h2 style='text-align: center;'> Insights from the Correlation Heatmap</h2>
+
+          <p style='font-size:18px;'>
+          From the heatmap, we can observe the following trends:
+          </p>
+
+          <ul style='font-size:18px;'>
+          <li><b>Terrorism Score (Score)</b> and <b>Terrorist Incidents (Incidents)</b> have a correlation of <b>0.52</b>, indicating that countries with higher scores tend to experience more terrorist attacks. However, the correlation is not very strong, suggesting that the score may also be influenced by other factors.</li>
+
+          <li><b>Terrorist Incidents (Incidents)</b> are highly correlated with <b>Fatalities (Fatalities)</b> and <b>Injuries (Injuries)</b>, meaning that more attacks generally result in higher casualties.</li>
+
+          <li><b>Fatalities (Fatalities)</b> and <b>Injuries (Injuries)</b> have a correlation of <b>0.91</b>, suggesting that a single terrorist attack often results in both deaths and injuries.</li>
+
+          <li><b>Hostage Numbers (Hostages)</b> show lower correlation with other variables (maximum <b>0.32</b>), indicating that hostage-taking incidents may not be directly related to general terrorist attacks or their casualties, and might involve different attack patterns.</li>
+          </ul>
+
+          <p style='font-size:18px;'>
+          This analysis provides a quantitative view of how different terrorism-related factors interact, helping policymakers and researchers understand the broader impact of terrorist activities.
+          </p>
+          """, unsafe_allow_html=True)
+
+
+
  
 
 
