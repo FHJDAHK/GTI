@@ -449,7 +449,20 @@ elif page == "EDA":
      with tab4:
         st.markdown("## 🌍 Global Terrorism Incidents by Country")
         st.write("This map visualizes the severity of terrorism incidents worldwide based on attack frequency.")
-   
+        df = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
+
+        df["Country"] = df["Country"].str.strip()  # 去掉国家名称前后空格
+        df["Incidents"] = df["Incidents"].fillna(0)  # 确保 "Incidents" 没有 NaN
+
+    # 修正国家名称，使其与 Plotly 兼容
+        country_corrections = {
+            "United States of America": "United States",
+            "Cote d' Ivoire": "Ivory Coast",
+            "Democratic Republic of the Congo": "Congo (Kinshasa)",
+            "Republic of the Congo": "Congo (Brazzaville)"
+        }
+        df["Country"] = df["Country"].replace(country_corrections)
+
         fig = px.choropleth(
             df,
             locations="Country",
