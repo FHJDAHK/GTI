@@ -278,13 +278,8 @@ elif page == "EDA":
     sns.set_style("whitegrid")
     sns.set_palette("Set2")
 
-    if "last_visited_page" not in st.session_state:
-     st.session_state.last_visited_page = None
-
-    if page == "EDA" and st.session_state.last_visited_page != "EDA":
-     st.session_state.show_eda = False  # 进入 EDA 页面时，重置为 False
-     st.session_state.last_visited_page = "EDA"  # 记录当前访问的页面
-     st.rerun()
+    if "show_eda" not in st.session_state:
+     st.session_state.show_eda = False
     
     if not st.session_state.show_eda:
       st.markdown("""
