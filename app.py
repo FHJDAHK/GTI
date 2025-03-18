@@ -457,7 +457,7 @@ elif page == "EDA":
             color_continuous_scale="Reds",
             title="Global Distribution of Terrorist Incidents"
          )
-         st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
 
  
