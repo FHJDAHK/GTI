@@ -449,7 +449,8 @@ elif page == "EDA":
      with tab4:
         st.markdown("## 🌍 Global Terrorism Incidents by Country")
         st.write("This map visualizes the severity of terrorism incidents worldwide based on attack frequency.")
-        df = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
+        df_tab4 = df[["Country", "Incidents"]].groupby("Country").sum().reset_index()
+
 
         df["Country"] = df["Country"].str.strip()  # 去掉国家名称前后空格
         df["Incidents"] = df["Incidents"].fillna(0)  # 确保 "Incidents" 没有 NaN
@@ -464,7 +465,7 @@ elif page == "EDA":
         df["Country"] = df["Country"].replace(country_corrections)
 
         fig = px.choropleth(
-            df,
+            df_tab4,
             locations="Country",
             locationmode="country names",
             color="Incidents",
@@ -472,7 +473,7 @@ elif page == "EDA":
             hover_data=["Incidents", "Fatalities", "Injuries", "Score"],
             color_continuous_scale="Reds",
             title="Global Distribution of Terrorist Incidents",
-            range_color=(0, df['Incidents'].max())
+            range_color=(0, df_tab4['Incidents'].max())
          )
         st.plotly_chart(fig, use_container_width=True)
 
