@@ -296,8 +296,8 @@ elif page == "EDA":
     """, unsafe_allow_html=True)
 
 
-      image = Image.open("11.webp")  
-      st.image(image, use_column_width=True)
+       image = Image.open("11.webp")  
+       st.image(image, use_column_width=True)
     
     # Create tabs for different EDA sections
     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
