@@ -280,6 +280,7 @@ elif page == "EDA":
 
     if "show_eda" not in st.session_state:
         st.session_state.show_eda = False
+        st.session_state.current_page = "EDA"
     
     if not st.session_state.show_eda:
       st.markdown("""
