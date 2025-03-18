@@ -284,6 +284,7 @@ elif page == "EDA":
     if st.session_state.last_visited_page != "EDA":
      st.session_state.show_eda = False
      st.session_state.last_visited_page = "EDA"
+     st.rerun()
     
     if not st.session_state.show_eda:
       st.markdown("""
