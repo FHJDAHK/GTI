@@ -279,7 +279,7 @@ elif page == "EDA":
     sns.set_palette("Set2")
 
     if "show_eda" not in st.session_state:
-    st.session_state.show_eda = False
+        st.session_state.show_eda = False
     
     if not st.session_state.show_eda:
       st.markdown("""
