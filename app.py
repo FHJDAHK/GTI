@@ -353,7 +353,7 @@ elif page == "EDA":
 
 
     # 📊 Global Terrorism Trends Over the Years
-    with tab2:
+     with tab2:
         st.markdown("## 📊 Global Terrorism Trends Over the Years")
 
    
