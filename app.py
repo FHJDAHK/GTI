@@ -281,10 +281,10 @@ elif page == "EDA":
     if "last_visited_page" not in st.session_state:
      st.session_state.last_visited_page = None
 
-    if st.session_state.last_visited_page != "EDA":
-     st.session_state.show_eda = False
-     st.session_state.last_visited_page = "EDA"
-     st.rerun()
+    if page == "EDA" and st.session_state.last_visited_page != "EDA":
+    st.session_state.show_eda = False  # 进入 EDA 页面时，重置为 False
+    st.session_state.last_visited_page = "EDA"  # 记录当前访问的页面
+    st.rerun()
     
     if not st.session_state.show_eda:
       st.markdown("""
