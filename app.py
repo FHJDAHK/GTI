@@ -308,10 +308,10 @@ elif page == "EDA":
     if st.button("Explore Data 🔍", key="explore_button"):
         st.session_state.show_eda = True
         st.rerun()
-
+   
     if st.session_state.show_eda:
      tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
-
+     df['Country'] = df['Country'].str.strip()
     # 📌 Top 10 Most Affected Countries
      with tab1:
         st.markdown("## 📌 Top 10 Most Affected Countries")
