@@ -467,7 +467,7 @@ elif page == "EDA":
             hover_name="Country",
             hover_data=["Incidents", "Fatalities", "Injuries", "Score"],
             color_continuous_scale="Reds",
-            title="Global Distribution of Terrorist Incidents"
+            title="Global Distribution of Terrorist Incidents",
             range_color=(0, df['Incidents'].max())
          )
         st.plotly_chart(fig, use_container_width=True)
