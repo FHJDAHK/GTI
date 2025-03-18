@@ -476,22 +476,22 @@ elif page == "EDA":
        )
         st.plotly_chart(fig, use_container_width=True)
 
-     st.markdown("""
-         <h3 style='text-align: center;'> Global Terrorism Incident Distribution</h3>
+         st.markdown("""
+            <h3 style='text-align: center;'> Global Terrorism Incident Distribution</h3>
 
-         <p style='font-size:18px;'>
-         This map reveals that <b>Iraq</b> is the country most severely affected by terrorism, with the highest number of incidents.  
-         Countries in <b>South Asia</b>, such as <b>Pakistan</b> and <b>India</b>, as well as <b>Middle Eastern nations</b> like <b>Syria</b> and <b>Afghanistan</b>, exhibit a high frequency of terrorist attacks, indicating that these regions remain major hotspots for terrorism.  
-         </p>
+            <p style='font-size:18px;'>
+            This map reveals that <b>Iraq</b> is the country most severely affected by terrorism, with the highest number of incidents.  
+            Countries in <b>South Asia</b>, such as <b>Pakistan</b> and <b>India</b>, as well as <b>Middle Eastern nations</b> like <b>Syria</b> and <b>Afghanistan</b>, exhibit a high frequency of terrorist attacks, indicating that these regions remain major hotspots for terrorism.  
+            </p>
 
-         <p style='font-size:18px;'>
-         Compared to the Middle East and South Asia, <b>Africa</b> has relatively fewer terrorist incidents, but countries such as <b>Somalia, Nigeria, and Burkina Faso</b> still experience a significant level of terrorist activity, as indicated by the darker colors on the map.  
-         </p>
+            <p style='font-size:18px;'>
+            Compared to the Middle East and South Asia, <b>Africa</b> has relatively fewer terrorist incidents, but countries such as <b>Somalia, Nigeria, and Burkina Faso</b> still experience a significant level of terrorist activity, as indicated by the darker colors on the map.  
+            </p>
 
-         <p style='font-size:18px;'>
-         Most <b>Western countries</b> (such as the <b>United States, Canada, Australia, and European nations</b>) appear in lighter shades, suggesting fewer terrorist incidents. This may indicate more effective security controls and counter-terrorism measures in these countries.
-         </p>
-         """, unsafe_allow_html=True)
+            <p style='font-size:18px;'>
+            Most <b>Western countries</b> (such as the <b>United States, Canada, Australia, and European nations</b>) appear in lighter shades, suggesting fewer terrorist incidents. This may indicate more effective security controls and counter-terrorism measures in these countries.
+            </p>
+            """, unsafe_allow_html=True)
 
 
  
