@@ -278,7 +278,11 @@ elif page == "EDA":
     sns.set_style("whitegrid")
     sns.set_palette("Set2")
 
-    st.markdown("""
+    if "show_eda" not in st.session_state:
+    st.session_state.show_eda = False
+    
+    if not st.session_state.show_eda:
+      st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
             Welcome to the **Exploratory Data Analysis Dashboard**!  
@@ -295,14 +299,14 @@ elif page == "EDA":
         <hr style='border: 1px solid #ddd;'>
     """, unsafe_allow_html=True)
 
-    image = Image.open("11.webp")  
-    st.image(image, use_column_width=True)
+      image = Image.open("11.webp")  
+      st.image(image, use_container_width=True)
     
-    # Create tabs for different EDA sections
-    tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
+    else:
+     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
 
     # 📌 Top 10 Most Affected Countries
-    with tab1:
+     with tab1:
         st.markdown("## 📌 Top 10 Most Affected Countries")
         
         # Aggregating data to find top affected countries
@@ -325,7 +329,7 @@ elif page == "EDA":
         st.pyplot(fig)
 
     # 📊 General Data Exploration
-    with tab2:
+     with tab2:
         st.markdown("## 🔍 Explore the Data")
 
         col1, col2 = st.columns(2)
@@ -339,7 +343,7 @@ elif page == "EDA":
             st.write(data["Year"].value_counts())
 
     # 📈 Visualization of Terrorism Trends
-    with tab3:
+     with tab3:
         st.markdown("## 📈 Visualizing Terrorism Trends")
 
         # Group by Year and Sum Incidents
