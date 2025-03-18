@@ -369,7 +369,7 @@ elif page == "EDA":
 
     
         st.write("### Yearly Aggregated Data")
-        st.dataframe(global_trend)  # 可交互表格
+        st.dataframe(global_trend) 
 
     
         fig, ax = plt.subplots(figsize=(10, 5))
@@ -386,6 +386,23 @@ elif page == "EDA":
 
     
         st.pyplot(fig)
+
+         st.markdown("""
+         <h2 style='text-align: center;'>Global Terrorism Trends (2012-2022)</h2>
+         <p style='font-size:18px;'>
+         This line chart illustrates the trends in global terrorist incidents (Total Incidents), fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
+         </p>
+
+         <p style='font-size:18px;'>
+         From the chart, it is evident that the total number of terrorist incidents (green) has remained relatively stable, with annual occurrences generally ranging between 4,000 and 6,000, indicating that terrorism continues to persist. This could be attributed to enhanced security measures or improvements in medical response.  
+
+         Fatalities (orange) peaked between 2014 and 2016 but have gradually declined, suggesting that the lethality of attacks has decreased over time.  
+ 
+         Injuries (blue) fluctuated significantly between 2012 and 2017 but showed an overall downward trend afterward, indicating that while the impact of terrorist attacks varied, their overall destructive capacity has diminished, potentially due to changes in attack methods.  
+
+         Despite the decline in casualties, terrorism remains a global security threat, necessitating continuous monitoring and preventive measures.
+         </p>
+        """, unsafe_allow_html=True)
 
     # 📈 Visualization of Terrorism Trends
      with tab3:
