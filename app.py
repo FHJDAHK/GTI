@@ -448,7 +448,7 @@ elif page == "EDA":
     # 🌍 Geographic Analysis
      with tab4:
         st.markdown("## 🌍 Global Terrorism Incidents by Country")
-        st.write("This map visualizes the severity of terrorism incidents worldwide based on attack frequency.")
+        st.write("This map visualizes the distribution of terrorist incidents around the world based on the frequency of attacks.")
          
         df_geo = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
 
@@ -472,9 +472,27 @@ elif page == "EDA":
            hover_data=["Incidents"],
            color_continuous_scale="Reds",
            title="Global Distribution of Terrorist Incidents",
-           range_color=(0, df_geo['Incidents'].max())  # 避免单个国家颜色过深
+           range_color=(0, df_geo['Incidents'].max())  
        )
         st.plotly_chart(fig, use_container_width=True)
+
+     st.markdown("""
+         <h3 style='text-align: center;'> Global Terrorism Incident Distribution</h3>
+
+         <p style='font-size:18px;'>
+         This map reveals that <b>Iraq</b> is the country most severely affected by terrorism, with the highest number of incidents.  
+         Countries in <b>South Asia</b>, such as <b>Pakistan</b> and <b>India</b>, as well as <b>Middle Eastern nations</b> like <b>Syria</b> and <b>Afghanistan</b>, exhibit a high frequency of terrorist attacks, indicating that these regions remain major hotspots for terrorism.  
+         </p>
+
+         <p style='font-size:18px;'>
+         Compared to the Middle East and South Asia, <b>Africa</b> has relatively fewer terrorist incidents, but countries such as <b>Somalia, Nigeria, and Burkina Faso</b> still experience a significant level of terrorist activity, as indicated by the darker colors on the map.  
+         </p>
+
+         <p style='font-size:18px;'>
+         Most <b>Western countries</b> (such as the <b>United States, Canada, Australia, and European nations</b>) appear in lighter shades, suggesting fewer terrorist incidents. This may indicate more effective security controls and counter-terrorism measures in these countries.
+         </p>
+         """, unsafe_allow_html=True)
+
 
  
 
