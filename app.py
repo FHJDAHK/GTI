@@ -297,6 +297,9 @@ elif page == "EDA":
         </ul>
         <p style='text-align: center;'>Understanding these patterns is essential for policymakers, security agencies, and researchers working towards a safer world.</p>
         <hr style='border: 1px solid #ddd;'>
+        <p style='text-align: center; font-size:16px; color:gray;'>
+            👉 Click <b>'Explore Data 🔍'</b> to explore the data.
+        </p>
     """, unsafe_allow_html=True)
 
       image = Image.open("11.webp")  
@@ -304,7 +307,7 @@ elif page == "EDA":
     
     if st.button("Explore Data 🔍", key="explore_button"):
         st.session_state.show_eda = True
-        st.experimental_rerun()
+        st.rerun()
 
     if st.session_state.show_eda:
      tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
