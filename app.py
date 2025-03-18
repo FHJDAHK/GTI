@@ -310,7 +310,7 @@ elif page == "EDA":
         st.rerun()
 
     if st.session_state.show_eda:
-     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Global Terrorism Trends Over the Years", "📈 Visualization"])
+     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "📈 Visualization"])
 
     # 📌 Top 10 Most Affected Countries
      with tab1:
@@ -354,7 +354,7 @@ elif page == "EDA":
 
     # 📊 Global Terrorism Trends Over the Years
      with tab2:
-        st.markdown("## 📊 Global Terrorism Trends Over the Years")
+        st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
    
         file_path = "Global Terrorism Index 2023.csv"
