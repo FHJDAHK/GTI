@@ -278,22 +278,20 @@ elif page == "EDA":
     sns.set_style("whitegrid")
     sns.set_palette("Set2")
 
-   st.markdown("""
+  st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
-           Welcome to the **Exploratory Data Analysis Dashboard**!  
-In this section, we take a deep dive into the **Global Terrorism Index 2023** dataset to uncover key insights.  
-Through interactive visualizations and statistical analysis, we aim to answer crucial questions, such as:
-
-- 📌 Which countries are most affected by terrorism?
-- 📊 What are the trends in terrorist incidents over time?
-- 🎯 What types of attacks are most common?
-- 🌍 How does terrorism vary across different regions?
-
-Understanding these patterns is essential for policymakers, security agencies, and researchers working towards a safer world.  
-Use the tabs below to explore the dataset from different perspectives!
-
+            Welcome to the **Exploratory Data Analysis Dashboard**!  
+            In this section, we take a deep dive into the **Global Terrorism Index 2023** dataset to uncover key insights.  
+            Through interactive visualizations and statistical analysis, we aim to answer crucial questions, such as:
         </p>
+        <ul>
+            <li>📌 Which countries are most affected by terrorism?</li>
+            <li>📊 What are the trends in terrorist incidents over time?</li>
+            <li>🎯 What types of attacks are most common?</li>
+            <li>🌍 How does terrorism vary across different regions?</li>
+        </ul>
+        <p style='text-align: center;'>Understanding these patterns is essential for policymakers, security agencies, and researchers working towards a safer world.</p>
         <hr style='border: 1px solid #ddd;'>
     """, unsafe_allow_html=True)
 
