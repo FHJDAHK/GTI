@@ -354,7 +354,7 @@ elif page == "EDA":
 
     # 📊 Global Terrorism Trends Over the Years
      with tab2:
-        st.markdown("## 📈 Global Terrorism Trends Over the Years")
+       st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
    
         file_path = "Global Terrorism Index 2023.csv"
@@ -387,7 +387,7 @@ elif page == "EDA":
     
         st.pyplot(fig)
 
-         st.markdown("""
+        st.markdown("""
           <h2 style='text-align: center;'>Global Terrorism Trends (2012-2022)</h2>
           <p style='font-size:18px;'>
           This line chart illustrates the trends in global terrorist incidents (Total Incidents), fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
