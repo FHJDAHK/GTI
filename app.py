@@ -354,7 +354,7 @@ elif page == "EDA":
 
     # 📊 Global Terrorism Trends Over the Years
      with tab2:
-       st.markdown("## 📈 Global Terrorism Trends Over the Years")
+        st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
    
         file_path = "Global Terrorism Index 2023.csv"
