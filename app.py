@@ -474,7 +474,7 @@ elif page == "EDA":
            title="Global Distribution of Terrorist Incidents",
            range_color=(0, df_geo['Incidents'].max())  # 避免单个国家颜色过深
        )
-         st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
  
 
