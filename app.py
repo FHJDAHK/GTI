@@ -311,7 +311,7 @@ elif page == "EDA":
    
     if st.session_state.show_eda:
      tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
-     df['Country'] = df['Country'].str.strip()
+     
     # 📌 Top 10 Most Affected Countries
      with tab1:
         st.markdown("## 📌 Top 10 Most Affected Countries")
@@ -441,6 +441,18 @@ elif page == "EDA":
           """, unsafe_allow_html=True)
 
 
+     df = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
+
+     country_corrections = {
+    "United States of America": "United States",
+    "Cote d' Ivoire": "Ivory Coast",
+    "Democratic Republic of the Congo": "Congo (Kinshasa)",
+    "Republic of the Congo": "Congo (Brazzaville)"
+}
+     df["Country"] = df["Country"].replace(country_corrections)
+
+
+
         
     # 🌍 Geographic Analysis
      with tab4:
@@ -456,6 +468,7 @@ elif page == "EDA":
             hover_data=["Incidents", "Fatalities", "Injuries", "Score"],
             color_continuous_scale="Reds",
             title="Global Distribution of Terrorist Incidents"
+            range_color=(0, df['Incidents'].max())
          )
         st.plotly_chart(fig, use_container_width=True)
 
