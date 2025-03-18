@@ -476,7 +476,7 @@ elif page == "EDA":
        )
         st.plotly_chart(fig, use_container_width=True)
 
-         st.markdown("""
+        st.markdown("""
             <h3 style='text-align: center;'> Global Terrorism Incident Distribution</h3>
 
             <p style='font-size:18px;'>
