@@ -302,7 +302,11 @@ elif page == "EDA":
       image = Image.open("11.webp")  
       st.image(image, use_container_width=True)
     
-    else:
+    if st.button("Explore Data 🔍", key="explore_button"):
+        st.session_state.show_eda = True
+        st.experimental_rerun()
+
+    if st.session_state.show_eda:
      tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
 
     # 📌 Top 10 Most Affected Countries
