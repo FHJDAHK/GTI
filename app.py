@@ -441,15 +441,20 @@ elif page == "EDA":
           """, unsafe_allow_html=True)
 
 
-     df = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
+    df = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
 
-     country_corrections = {
+# 处理可能的错误
+df["Country"] = df["Country"].str.strip()  # 去掉前后空格
+df["Incidents"] = df["Incidents"].fillna(0)  # 替换 NaN
+
+# 修正国家名称
+country_corrections = {
     "United States of America": "United States",
     "Cote d' Ivoire": "Ivory Coast",
     "Democratic Republic of the Congo": "Congo (Kinshasa)",
     "Republic of the Congo": "Congo (Brazzaville)"
 }
-     df["Country"] = df["Country"].replace(country_corrections)
+df["Country"] = df["Country"].replace(country_corrections)
 
 
 
