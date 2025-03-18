@@ -290,10 +290,10 @@ elif page == "EDA":
             Through interactive visualizations and statistical analysis, we aim to answer crucial questions, such as:
         </p>
         <ul>
-            <li>📌 Which countries are most affected by terrorism?</li>
-            <li>📊 What are the trends in terrorist incidents over time?</li>
-            <li>🎯 What types of attacks are most common?</li>
-            <li>🌍 How does terrorism vary across different regions?</li>
+            <li>📌 Which countries experience the highest number of terrorist incidents?</li>
+            <li>📈 How have terrorist incidents, fatalities, and injuries evolved over time?</li>
+            <li>🔥 What factors are most correlated with terrorism severity?</li>
+            <li>🌍 🌍 How do terrorist incidents vary across different regions, and which areas are most affected?</li>
         </ul>
         <p style='text-align: center;'>Understanding these patterns is essential for policymakers, security agencies, and researchers working towards a safer world.</p>
         <hr style='border: 1px solid #ddd;'>
