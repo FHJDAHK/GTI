@@ -335,6 +335,17 @@ elif page == "EDA":
         ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
         st.pyplot(fig)
 
+
+        st.markdown(""" 
+         This visualization presents the top 10 countries most affected by terrorism, combining **bar charts, data tables, and horizontal bar plots** to provide a **comprehensive view of terrorism incidents worldwide**.  
+         The data clearly illustrates the unequal distribution of terrorist attacks, with some nations experiencing significantly higher numbers of incidents compared to others.
+
+         From the data, it is evident that Iraq, Afghanistan, Pakistan, and Somalia bear the highest burden of terrorist activities, with incident numbers far exceeding those in other regions.  
+         A sharp decline in incidents is observed from **India onwards**, indicating that the **impact of terrorism is not evenly distributed geographically** but rather concentrated in specific regions.  
+         Certain countries are significantly more vulnerable to attacks compared to others, emphasizing the need for targeted security measures and geopolitical analysis.
+""")
+
+
     # 📊 General Data Exploration
      with tab2:
         st.markdown("## 🔍 Explore the Data")
