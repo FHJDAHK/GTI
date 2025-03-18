@@ -278,7 +278,7 @@ elif page == "EDA":
     sns.set_style("whitegrid")
     sns.set_palette("Set2")
 
-  st.markdown("""
+    st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
             Welcome to the **Exploratory Data Analysis Dashboard**!  
