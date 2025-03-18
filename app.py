@@ -278,9 +278,12 @@ elif page == "EDA":
     sns.set_style("whitegrid")
     sns.set_palette("Set2")
 
-    if "show_eda" not in st.session_state:
-        st.session_state.show_eda = False
-        st.session_state.current_page = "EDA"
+    if "last_visited_page" not in st.session_state:
+     st.session_state.last_visited_page = None
+
+    if st.session_state.last_visited_page != "EDA":
+     st.session_state.show_eda = False
+     st.session_state.last_visited_page = "EDA"
     
     if not st.session_state.show_eda:
       st.markdown("""
