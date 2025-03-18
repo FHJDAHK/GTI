@@ -310,7 +310,7 @@ elif page == "EDA":
         st.rerun()
 
     if st.session_state.show_eda:
-     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Data Exploration", "📈 Visualization"])
+     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📊 Global Terrorism Trends Over the Years", "📈 Visualization"])
 
     # 📌 Top 10 Most Affected Countries
      with tab1:
@@ -352,19 +352,40 @@ elif page == "EDA":
 
 
 
-    # 📊 General Data Exploration
-     with tab2:
-        st.markdown("## 🔍 Explore the Data")
+    # 📊 Global Terrorism Trends Over the Years
+    with tab2:
+        st.markdown("## 📊 Global Terrorism Trends Over the Years")
 
-        col1, col2 = st.columns(2)
+   
+        file_path = "Global Terrorism Index 2023.csv"
+        df = pd.read_csv(file_path)
 
-        with col1:
-            st.subheader("📍 Incidents by Country")
-            st.write(data["Country"].value_counts())
+    
+        global_trend = df.groupby("Year").agg({
+            "Incidents": "sum",
+            "Fatalities": "sum",
+            "Injuries": "sum"
+        }).reset_index()
 
-        with col2:
-            st.subheader("📆 Incidents by Year")
-            st.write(data["Year"].value_counts())
+    
+        st.write("### Yearly Aggregated Data")
+        st.dataframe(global_trend)  # 可交互表格
+
+    
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        ax.plot(global_trend["Year"], global_trend["Incidents"], marker="o", linestyle="-", label="Total Incidents")
+        ax.plot(global_trend["Year"], global_trend["Fatalities"], marker="s", linestyle="--", label="Total Fatalities", alpha=0.7)
+        ax.plot(global_trend["Year"], global_trend["Injuries"], marker="^", linestyle=":", label="Total Injuries", alpha=0.7)
+
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Count")
+        ax.set_title("Global Terrorism Incidents, Fatalities, and Injuries (Yearly)")
+        ax.legend()
+        ax.grid(True)
+
+    
+        st.pyplot(fig)
 
     # 📈 Visualization of Terrorism Trends
      with tab3:
