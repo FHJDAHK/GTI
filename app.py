@@ -298,7 +298,7 @@ Use the tabs below to explore the dataset from different perspectives!
     """, unsafe_allow_html=True)
 
 from PIL import Image
-    image = Image.open("your_image.jpg")  
+    image = Image.open("11.webp")  
     st.image(image, use_column_width=True)
     
     # Create tabs for different EDA sections
