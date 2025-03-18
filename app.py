@@ -310,7 +310,7 @@ elif page == "EDA":
         st.rerun()
 
     if st.session_state.show_eda:
-     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity"])
+     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
 
     # 📌 Top 10 Most Affected Countries
      with tab1:
@@ -352,7 +352,7 @@ elif page == "EDA":
 
 
 
-    # 📊 Global Terrorism Trends Over the Years
+    # 📈 Global Terrorism Trends Over the Years
      with tab2:
         st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
@@ -440,6 +440,24 @@ elif page == "EDA":
           </p>
           """, unsafe_allow_html=True)
 
+
+        
+    # 🌍 Geographic Analysis
+     with tab4:
+        st.markdown("## 🌍 Global Terrorism Incidents by Country")
+        st.write("This map visualizes the severity of terrorism incidents worldwide based on attack frequency.")
+   
+        fig = px.choropleth(
+            df,
+            locations="Country",
+            locationmode="country names",
+            color="Incidents",
+            hover_name="Country",
+            hover_data=["Incidents", "Fatalities", "Injuries", "Score"],
+            color_continuous_scale="Reds",
+            title="Global Distribution of Terrorist Incidents"
+         )
+         st.plotly_chart(fig, use_container_width=True)
 
 
  
