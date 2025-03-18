@@ -310,7 +310,7 @@ elif page == "EDA":
         st.rerun()
 
     if st.session_state.show_eda:
-     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "📈 Visualization"])
+     tab1, tab2, tab3 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity"])
 
     # 📌 Top 10 Most Affected Countries
      with tab1:
@@ -404,35 +404,20 @@ elif page == "EDA":
           </p>
          """, unsafe_allow_html=True)
 
-    # 📈 Visualization of Terrorism Trends
+    #🔥 Terrorism Score vs Severity
      with tab3:
-        st.markdown("## 📈 Visualizing Terrorism Trends")
+        st.markdown("## 🔥 Correlation Heatmap: Terrorism Score vs Severity")
+        st.write("This heatmap visualizes the correlation between terrorism scores, attack incidents, fatalities, injuries, and hostage situations.")
 
-        # Group by Year and Sum Incidents
-        incidents_by_year = data.groupby("Year")["Incidents"].sum().reset_index()
+        selected_columns = ['Score', 'Incidents', 'Fatalities', 'Injuries', 'Hostages']
+        correlation_matrix = df[selected_columns].corr()
 
-        # Line Chart
-        fig, ax = plt.subplots(figsize=(10, 5))
-        sns.lineplot(x="Year", y="Incidents", data=incidents_by_year, marker="o", color="red", ax=ax)
-        ax.set_xlabel("Year")
-        ax.set_ylabel("Total Incidents")
-        ax.set_title("Trend of Terrorism Incidents Over Time")
-        ax.grid(True)
+        fig, ax = plt.subplots(figsize=(8, 6))
+        sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5, ax=ax)
+        plt.title("Correlation Heatmap: Terrorism Score vs Severity")
+         
         st.pyplot(fig)
-
-        # 🌍 World Heatmap (Choropleth)
-        fig = px.choropleth(
-            data, 
-            locations="iso3c", 
-            color="Incidents",
-            hover_name="Country",
-            title="Global Terrorism Intensity",
-            color_continuous_scale="Reds",
-            projection="natural earth"
-        )
-        st.plotly_chart(fig)
-
-
+ 
 
 
 
