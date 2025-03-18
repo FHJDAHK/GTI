@@ -449,34 +449,31 @@ elif page == "EDA":
      with tab4:
         st.markdown("## 🌍 Global Terrorism Incidents by Country")
         st.write("This map visualizes the severity of terrorism incidents worldwide based on attack frequency.")
-        df_tab4 = df[["Country", "Incidents"]].groupby("Country").sum().reset_index()
+         
+        df_geo = df[['Country', 'Incidents']].groupby('Country').sum().reset_index()
 
 
-        df["Country"] = df["Country"].str.strip()  # 去掉国家名称前后空格
-        df["Incidents"] = df["Incidents"].fillna(0)  # 确保 "Incidents" 没有 NaN
-
-    # 修正国家名称，使其与 Plotly 兼容
         country_corrections = {
-            "United States of America": "United States",
-            "Cote d' Ivoire": "Ivory Coast",
-            "Democratic Republic of the Congo": "Congo (Kinshasa)",
-            "Republic of the Congo": "Congo (Brazzaville)"
-        }
-        df["Country"] = df["Country"].replace(country_corrections)
+        "United States of America": "United States",
+        "Cote d' Ivoire": "Ivory Coast",
+        "Democratic Republic of the Congo": "Congo (Kinshasa)",
+        "Republic of the Congo": "Congo (Brazzaville)"
+       }
+        df_geo["Country"] = df_geo["Country"].replace(country_corrections)
 
+        df_geo["Incidents"] = pd.to_numeric(df_geo["Incidents"], errors="coerce").fillna(0)
+        
         fig = px.choropleth(
-            df_tab4,
-            locations="Country",
-            locationmode="country names",
-            color="Incidents",
-            hover_name="Country",
-            hover_data=["Incidents", "Fatalities", "Injuries", "Score"],
-            color_continuous_scale="Reds",
-            title="Global Distribution of Terrorist Incidents",
-            range_color=(0, df_tab4['Incidents'].max())
-         )
-        st.plotly_chart(fig, use_container_width=True)
-
+           df_geo,
+           locations="Country",
+           locationmode="country names",
+           color="Incidents",
+           hover_name="Country",
+           hover_data=["Incidents"],
+           color_continuous_scale="Reds",
+           title="Global Distribution of Terrorist Incidents",
+           range_color=(0, df_geo['Incidents'].max())  # 避免单个国家颜色过深
+       )
 
  
 
