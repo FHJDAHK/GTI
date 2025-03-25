@@ -274,14 +274,12 @@ if page == "Overview":
 
 
 elif page == "EDA":
-     if "show_eda" not in st.session_state:
-         st.session_state.show_eda = False
-
+     
      show_eda_flag = st.query_params.get("show_eda", "0")
-     st.query_params["show_eda"] = "1"
+     
          
          
-     if not st.session_state.show_eda:
+     if show_eda_flag != "1":
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
