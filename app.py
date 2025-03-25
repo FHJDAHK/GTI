@@ -272,23 +272,14 @@ if page == "Overview":
 
     st.markdown("---")  # Divider
 
+if "show_eda" not in st.session_state:
+    st.session_state.show_eda = False
+    
+if page != "EDA":
+    st.session_state.show_eda = False
 
 elif page == "EDA":
 
-     if "show_eda" not in st.session_state:
-        st.session_state.show_eda = False
-     if "clicked_eda_button" not in st.session_state:
-        st.session_state.clicked_eda_button = False
-     if "active_page" not in st.session_state:
-        st.session_state.active_page = ""
-     
-     if st.session_state.active_page != "EDA":
-        st.session_state.show_eda = False
-        st.session_state.clicked_eda_button = False
-
-        st.session_state.active_page = "EDA"
-
-     
      if not st.session_state.show_eda:
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
@@ -314,9 +305,8 @@ elif page == "EDA":
       st.image(image, use_container_width=True)
     
       if st.button("Explore Data 🔍"):
-         st.session_state.show_eda = True
-         st.session_state.clicked_eda_button = True
-         st.rerun()
+          st.session_state.show_eda = True
+          st.rerun()
    
      else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
