@@ -348,7 +348,7 @@ elif page == "EDA":
          text="Incidents",
          title="Top 10 Countries with Highest Terrorism Incidents"
      )
-         fig.update_traces(textposition="outside")
+        fig.update_traces(textposition="outside")
          fig.update_layout(
          xaxis_title="Country",
          yaxis_title="Number of Incidents",
