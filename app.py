@@ -275,13 +275,14 @@ if page == "Overview":
 
 elif page == "EDA":
 
-     if "show_eda" not in st.query_params:
-       st.query_params["show_eda"] = "0"
-       st.rerun()
+     if "_entered_eda" not in st.session_state or not st.session_state._entered_eda:
+        st.session_state._entered_eda = True
+        st.session_state.show_eda = False
      
-     show_eda_flag = st.query_params.get("show_eda", "0")
+     if "show_eda" not in st.session_state:
+        st.session_state.show_eda = False
      
-     if show_eda_flag == "0":
+     if not st.session_state.show_eda:
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
@@ -306,8 +307,8 @@ elif page == "EDA":
       st.image(image, use_container_width=True)
     
       if st.button("Explore Data 🔍"):
-         st.query_params["show_eda"] = "1"  # 将查询参数标记为已进入EDA内容
-         st.rerun() 
+         st.session_state.show_eda = True
+         st.rerun()
    
      else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
