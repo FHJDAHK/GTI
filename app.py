@@ -324,29 +324,40 @@ elif page == "EDA":
          country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
          top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
 
-
             
-         values = top_countries["Incidents"]
-         norm = LogNorm(vmin=values.min(), vmax=values.max())
-         raw = [norm(val) for val in values]
-         compressed = [0.3 + 0.7 * r for r in raw]  # Avoid near-white bars
-         colors = [cm.Reds(c) for c in compressed]
+         flag_map = {
+         "Iraq": "🇮🇶 Iraq",
+         "Afghanistan": "🇦🇫 Afghanistan",
+         "Pakistan": "🇵🇰 Pakistan",
+         "Somalia": "🇸🇴 Somalia",
+         "India": "🇮🇳 India",
+         "Nigeria": "🇳🇬 Nigeria",
+         "Colombia": "🇨🇴 Colombia",
+         "Mali": "🇲🇱 Mali",
+         "Myanmar": "🇲🇲 Myanmar",
+         "Syria": "🇸🇾 Syria"
+      }
+          top_countries["Country+Flag"] = top_countries["Country"].map(flag_map)
 
+         fig = px.bar(
+         top_countries,
+         x="Country+Flag",
+         y="Incidents",
+         color="Incidents",
+         color_continuous_scale=["#FFD700", "#FF5733", "#B80000"],  # Gold to deep red
+         text="Incidents",
+         title="Top 10 Countries with Highest Terrorism Incidents"
+     )
+         fig.update_traces(textposition="outside")
+         fig.update_layout(
+         xaxis_title="Country",
+         yaxis_title="Number of Incidents",
+         coloraxis_showscale=False,
+         uniformtext_minsize=8,
+         uniformtext_mode='hide'
+      )
 
-         fig, ax = plt.subplots(figsize=(12, 6))
-         sns.barplot(
-             x="Country",
-             y="Incidents",
-             data=top_countries,
-             palette=colors,
-             ax=ax
-         )
-         ax.set_xlabel("Country")
-         ax.set_ylabel("Number of Incidents")
-         ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
-         plt.xticks(rotation=45) 
-         st.pyplot(fig)
-
+    st.plotly_chart(fig, use_container_width=True)
         # Data Table
          st.subheader("Top 10 Countries Data")
          st.write(top_countries)
