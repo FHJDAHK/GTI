@@ -323,8 +323,12 @@ elif page == "EDA":
          country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
          top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
 
+
+            
+         vmin = top_countries["Incidents"].quantile(0.25)
+         vmax = top_countries["Incidents"].max()
          norm = mcolors.Normalize(vmin=top_countries["Incidents"].min(), vmax=top_countries["Incidents"].max())
-         colors = [cm.Reds_r(norm(val)) for val in top_countries["Incidents"]]
+         colors = [cm.Reds(norm(val)) for val in top_countries["Incidents"]]
 
 
          fig, ax = plt.subplots(figsize=(12, 6))
