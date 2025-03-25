@@ -274,8 +274,12 @@ if page == "Overview":
 
 
 elif page == "EDA":
+
+     if "show_eda" not in st.query_params:
+       st.query_params["show_eda"] = "0"
+       st.rerun()
      
-     show_eda_flag = st.query_params.get("show_eda", "0")
+      show_eda_flag = st.query_params.get("show_eda", "0")
      
      if show_eda_flag == "0":
       st.markdown("""
