@@ -310,7 +310,7 @@ elif page == "EDA":
     
       if st.button("Explore Data 🔍"):
          st.session_state.show_eda = True
-         st.session_state.clicked_eda_button = True)
+         st.session_state.clicked_eda_button = True
    
      else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
