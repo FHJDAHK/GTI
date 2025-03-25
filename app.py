@@ -8,6 +8,8 @@ import base64
 import streamlit as st
 from statsmodels.tsa.holtwinters import Holt
 import numpy as np
+import matplotlib.cm as cm
+import matplotlib.colors as mcolor
     
 
 
@@ -321,20 +323,27 @@ elif page == "EDA":
          country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
          top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
 
-        # Display bar chart
-         st.bar_chart(top_countries.set_index("Country"))
+         norm = mcolors.Normalize(vmin=top_countries["Incidents"].min(), vmax=top_countries["Incidents"].max())
+         colors = [cm.Reds_r(norm(val)) for val in top_countries["Incidents"]]
+
+
+         fig, ax = plt.subplots(figsize=(12, 6))
+         sns.barplot(
+             x="Country",
+             y="Incidents",
+             data=top_countries,
+             palette=colors,
+             ax=ax
+         )
+         ax.set_xlabel("Country")
+         ax.set_ylabel("Number of Incidents")
+         ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
+         plt.xticks(rotation=45) 
+         st.pyplot(fig)
 
         # Data Table
          st.subheader("Top 10 Countries Data")
-         st.write(top_countries)
-
-        # Alternative visualization with Seaborn
-         fig, ax = plt.subplots(figsize=(12, 6))
-         sns.barplot(x="Incidents", y="Country", data=top_countries, palette="Reds_r", ax=ax)
-         ax.set_xlabel("Number of Incidents")
-         ax.set_ylabel("Country")
-         ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
-         st.pyplot(fig)
+         st.write(top_countries)0
 
 
          st.markdown("""
