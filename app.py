@@ -277,9 +277,7 @@ elif page == "EDA":
      
      show_eda_flag = st.query_params.get("show_eda", "0")
      
-         
-         
-     if show_eda_flag != "1":
+     if show_eda_flag != "0":
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
@@ -308,7 +306,6 @@ elif page == "EDA":
          st.rerun() 
    
      else:
-         
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
