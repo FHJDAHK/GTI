@@ -325,10 +325,11 @@ elif page == "EDA":
 
 
             
-         vmin = top_countries["Incidents"].quantile(0.25)
-         vmax = top_countries["Incidents"].max()
-         norm = mcolors.Normalize(vmin=top_countries["Incidents"].min(), vmax=top_countries["Incidents"].max())
-         colors = [cm.Reds(norm(val)) for val in top_countries["Incidents"]]
+         values = top_countries["Incidents"]
+         vmin = values.min() + 0.3 * (values.max() - values.min())  # Shift lower bound upward to avoid pure white
+         vmax = values.max()
+         norm = mcolors.Normalize(vmin=vmin, vmax=vmax)
+         colors = [cm.Reds(norm(val)) for val in values]
 
 
          fig, ax = plt.subplots(figsize=(12, 6))
