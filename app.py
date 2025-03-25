@@ -279,7 +279,7 @@ elif page == "EDA":
        st.query_params["show_eda"] = "0"
        st.rerun()
      
-      show_eda_flag = st.query_params.get("show_eda", "0")
+     show_eda_flag = st.query_params.get("show_eda", "0")
      
      if show_eda_flag == "0":
       st.markdown("""
