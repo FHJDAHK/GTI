@@ -339,7 +339,7 @@ elif page == "EDA":
       }
         top_countries["Country+Flag"] = top_countries["Country"].map(flag_map)
 
-         fig = px.bar(
+        fig = px.bar(
          top_countries,
          x="Country+Flag",
          y="Incidents",
