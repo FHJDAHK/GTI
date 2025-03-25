@@ -274,13 +274,10 @@ if page == "Overview":
 
 
 elif page == "EDA":
-    # Apply Seaborn theme for better aesthetics
-    sns.set_style("whitegrid")
-    sns.set_palette("Set2")
-
-    if "show_eda" not in st.session_state:
-     st.session_state.show_eda = False
-    
+     if "last_page" not in st.session_state or st.session_state.last_page != "EDA":
+        st.session_state.show_eda = False
+        st.session_state.last_page = "EDA"
+         
     if not st.session_state.show_eda:
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
@@ -305,11 +302,11 @@ elif page == "EDA":
       image = Image.open("11.webp")  
       st.image(image, use_container_width=True)
     
-    if st.button("Explore Data 🔍", key="explore_button"):
-        st.session_state.show_eda = True
-        st.rerun()
+      if st.button("Explore Data 🔍", key="explore_button"):
+          st.session_state.show_eda = True
+          st.rerun()
    
-    if st.session_state.show_eda:
+    else:
      tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
