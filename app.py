@@ -301,8 +301,7 @@ elif page == "EDA":
         <p style='text-align: center; font-size:16px; color:gray;'>
             👉 Click <b>'Explore Data 🔍'</b> to explore the data.
         </p>
-    """, 
-      st.markdown(intro_md, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
       image = Image.open("11.webp")  
       st.image(image, use_container_width=True)
