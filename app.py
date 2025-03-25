@@ -337,27 +337,27 @@ elif page == "EDA":
          "Myanmar": "🇲🇲 Myanmar",
          "Syria": "🇸🇾 Syria"
       }
-        top_countries["Country+Flag"] = top_countries["Country"].map(flag_map)
+         top_countries["Country+Flag"] = top_countries["Country"].map(flag_map)
 
-        fig = px.bar(
-         top_countries,
-         x="Country+Flag",
-         y="Incidents",
-         color="Incidents",
-         color_continuous_scale=["#FFD700", "#FF5733", "#B80000"],  # Gold to deep red
-         text="Incidents",
-         title="Top 10 Countries with Highest Terrorism Incidents"
-     )
-        fig.update_traces(textposition="outside")
-        fig.update_layout(
-         xaxis_title="Country",
-         yaxis_title="Number of Incidents",
-         coloraxis_showscale=False,
-         uniformtext_minsize=8,
-         uniformtext_mode='hide'
+         fig = px.bar(
+          top_countries,
+          x="Country+Flag",
+          y="Incidents",
+          color="Incidents",
+          color_continuous_scale=["#FFD700", "#FF5733", "#B80000"],  # Gold to deep red
+          text="Incidents",
+          title="Top 10 Countries with Highest Terrorism Incidents"
       )
+         fig.update_traces(textposition="outside")
+         fig.update_layout(
+          xaxis_title="Country",
+          yaxis_title="Number of Incidents",
+          coloraxis_showscale=False,
+          uniformtext_minsize=8,
+          uniformtext_mode='hide'
+       )
 
-        st.plotly_chart(fig, use_container_width=True)
+         st.plotly_chart(fig, use_container_width=True)
 
         # Data Table
          st.subheader("Top 10 Countries Data")
