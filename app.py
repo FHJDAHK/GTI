@@ -278,7 +278,7 @@ elif page == "EDA":
         st.session_state.show_eda = False
         st.session_state.last_page = "EDA"
          
-    if not st.session_state.show_eda:
+     if not st.session_state.show_eda:
       st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
