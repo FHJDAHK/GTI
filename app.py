@@ -311,47 +311,47 @@ elif page == "EDA":
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
-     with tab1:
-        st.markdown("## 📌 Top 10 Most Affected Countries")
+        with tab1:
+         st.markdown("## 📌 Top 10 Most Affected Countries")
         
         # Aggregating data to find top affected countries
-        country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
-        top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
+         country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
+         top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
 
         # Display bar chart
-        st.bar_chart(top_countries.set_index("Country"))
+         st.bar_chart(top_countries.set_index("Country"))
 
         # Data Table
-        st.subheader("Top 10 Countries Data")
-        st.write(top_countries)
+         st.subheader("Top 10 Countries Data")
+         st.write(top_countries)
 
         # Alternative visualization with Seaborn
-        fig, ax = plt.subplots(figsize=(12, 6))
-        sns.barplot(x="Incidents", y="Country", data=top_countries, palette="Reds_r", ax=ax)
-        ax.set_xlabel("Number of Incidents")
-        ax.set_ylabel("Country")
-        ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
-        st.pyplot(fig)
+         fig, ax = plt.subplots(figsize=(12, 6))
+         sns.barplot(x="Incidents", y="Country", data=top_countries, palette="Reds_r", ax=ax)
+         ax.set_xlabel("Number of Incidents")
+         ax.set_ylabel("Country")
+         ax.set_title("Top 10 Countries with Highest Terrorism Incidents")
+         st.pyplot(fig)
 
 
-        st.markdown("""
-         <h2 style='text-align: center;'>Global Terrorism Impact: Top 10 Most Affected Countries</h2>
-         <p style='font-size:18px;'>
-         This visualization presents the top 10 countries most affected by terrorism, combining bar charts, data tables, and horizontal bar plots to provide a comprehensive view of terrorism incidents worldwide.  
-         The data clearly illustrates the unequal distribution of terrorist attacks, with some nations experiencing significantly higher numbers of incidents compared to others.
-         </p>
+         st.markdown("""
+          <h2 style='text-align: center;'>Global Terrorism Impact: Top 10 Most Affected Countries</h2>
+          <p style='font-size:18px;'>
+          This visualization presents the top 10 countries most affected by terrorism, combining bar charts, data tables, and horizontal bar plots to provide a comprehensive view of terrorism incidents worldwide.  
+          The data clearly illustrates the unequal distribution of terrorist attacks, with some nations experiencing significantly higher numbers of incidents compared to others.
+          </p>
 
-         <p style='font-size:18px;'>
-         From the data, it is evident that Iraq, Afghanistan, Pakistan, and Somalia bear the highest burden of terrorist activities, with incident numbers far exceeding those in other regions.  
-         A sharp decline in incidents is observed from India onwards, indicating that the impact of terrorism is not evenly distributed geographically but rather concentrated in specific regions.  
-         Certain countries are significantly more vulnerable to attacks compared to others, emphasizing the need for targeted security measures and geopolitical analysis.
-         </p>
-        """, unsafe_allow_html=True)
+          <p style='font-size:18px;'>
+          From the data, it is evident that Iraq, Afghanistan, Pakistan, and Somalia bear the highest burden of terrorist activities, with incident numbers far exceeding those in other regions.  
+          A sharp decline in incidents is observed from India onwards, indicating that the impact of terrorism is not evenly distributed geographically but rather concentrated in specific regions.  
+          Certain countries are significantly more vulnerable to attacks compared to others, emphasizing the need for targeted security measures and geopolitical analysis.
+          </p>
+         """, unsafe_allow_html=True)
 
 
 
     # 📈 Global Terrorism Trends Over the Years
-     with tab2:
+       with tab2:
         st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
    
@@ -403,7 +403,7 @@ elif page == "EDA":
          """, unsafe_allow_html=True)
 
     #🔥 Terrorism Score vs Severity
-     with tab3:
+       with tab3:
         st.markdown("## 🔥 Correlation Heatmap: Terrorism Score vs Severity")
         st.write("This heatmap visualizes the correlation between terrorism scores, attack incidents, fatalities, injuries, and hostage situations.")
 
@@ -444,7 +444,7 @@ elif page == "EDA":
 
         
     # 🌍 Geographic Analysis
-     with tab4:
+       with tab4:
         st.markdown("## 🌍 Global Terrorism Incidents by Country")
         st.write("This map visualizes the distribution of terrorist incidents around the world based on the frequency of attacks.")
          
