@@ -328,7 +328,7 @@ elif page == "EDA":
          values = top_countries["Incidents"]
          vmin = values.min() + 0.3 * (values.max() - values.min())  # Shift lower bound upward to avoid pure white
          vmax = values.max()
-         norm = mcolors.PowerNorm(gamma=0.5, vmin=values.min(), vmax=values.max())
+         norm = mcolors.PowerNorm(gamma=0.3, vmin=values.min(), vmax=values.max())
          colors = [cm.Reds(norm(val)) for val in values]
 
 
