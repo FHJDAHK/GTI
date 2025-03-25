@@ -343,7 +343,7 @@ elif page == "EDA":
 
         # Data Table
          st.subheader("Top 10 Countries Data")
-         st.write(top_countries)0
+         st.write(top_countries)
 
 
          st.markdown("""
