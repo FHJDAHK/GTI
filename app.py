@@ -271,14 +271,14 @@ if page == "Overview":
         st.warning("No data available for the selected country.")
 
     st.markdown("---")  # Divider
-
-if "show_eda" not in st.session_state:
-    st.session_state.show_eda = False
     
 if page != "EDA":
     st.session_state.show_eda = False
 
 elif page == "EDA":
+
+     if "show_eda" not in st.session_state:
+     st.session_state.show_eda = False
 
      if not st.session_state.show_eda:
       st.markdown("""
