@@ -10,6 +10,7 @@ from statsmodels.tsa.holtwinters import Holt
 import numpy as np
 import matplotlib.cm as cm
 import matplotlib.colors as mcolors
+from matplotlib.colors import LogNorm
     
 
 
@@ -326,9 +327,9 @@ elif page == "EDA":
 
             
          values = top_countries["Incidents"]
-         norm = mcolors.PowerNorm(gamma=0.3, vmin=values.min(), vmax=values.max())
+         norm = LogNorm(vmin=values.min(), vmax=values.max())
          raw = [norm(val) for val in values]
-         compressed = [0.3 + 0.7 * r for r in raw]  # Avoid extremely pale bars
+         compressed = [0.3 + 0.7 * r for r in raw]  # Avoid near-white bars
          colors = [cm.Reds(c) for c in compressed]
 
 
