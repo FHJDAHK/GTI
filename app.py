@@ -306,8 +306,8 @@ elif page == "EDA":
       st.image(image, use_container_width=True)
     
       if st.button("Explore Data 🔍"):
-          st.experimental_set_query_params(show_eda="1")  # 将查询参数标记为已进入EDA内容
-          st.experimental_rerun() 
+         st.query_params["show_eda"] = "1"  # 将查询参数标记为已进入EDA内容
+         st.rerun() 
    
      else:
          
