@@ -286,7 +286,7 @@ elif page == "EDA":
         st.session_state.show_eda = False
         st.session_state.clicked_eda_button = False
 
-      st.session_state.active_page = "EDA"
+        st.session_state.active_page = "EDA"
 
      
      if not st.session_state.show_eda:
