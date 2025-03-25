@@ -278,7 +278,7 @@ elif page == "EDA":
          st.session_state.show_eda = False
 
      show_eda_flag = st.query_params.get("show_eda", "0")
-     st.session_state.show_eda = (show_eda_flag == "1")
+     st.query_params["show_eda"] = "1"
          
          
      if not st.session_state.show_eda:
