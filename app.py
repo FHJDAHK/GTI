@@ -277,8 +277,7 @@ elif page == "EDA":
      if "show_eda" not in st.session_state:
          st.session_state.show_eda = False
 
-     params = st.experimental_get_query_params()
-     show_eda_flag = params.get("show_eda", ["0"])[0]  # 若无参数则默认为 "0"
+     show_eda_flag = st.query_params.get("show_eda", "0")
      st.session_state.show_eda = (show_eda_flag == "1")
          
          
