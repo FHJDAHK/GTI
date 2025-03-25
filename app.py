@@ -349,7 +349,7 @@ elif page == "EDA":
          title="Top 10 Countries with Highest Terrorism Incidents"
      )
         fig.update_traces(textposition="outside")
-         fig.update_layout(
+        fig.update_layout(
          xaxis_title="Country",
          yaxis_title="Number of Incidents",
          coloraxis_showscale=False,
@@ -357,7 +357,8 @@ elif page == "EDA":
          uniformtext_mode='hide'
       )
 
-    st.plotly_chart(fig, use_container_width=True)
+     st.plotly_chart(fig, use_container_width=True)
+
         # Data Table
          st.subheader("Top 10 Countries Data")
          st.write(top_countries)
