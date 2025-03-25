@@ -46,6 +46,8 @@ st.markdown("""
 st.sidebar.title("📍 Navigation")
 page = st.sidebar.radio("Go to", ["About Us", "Introduction", "Overview", "EDA", "Prediction"])
 
+if page != "EDA":
+    st.session_state.show_eda = False
 
 if page == "About Us":
     st.markdown("<p class='title'>👥 About Us</p>", unsafe_allow_html=True)
@@ -272,8 +274,6 @@ if page == "Overview":
 
     st.markdown("---")  # Divider
     
-if page != "EDA":
-    st.session_state.show_eda = False
 
 elif page == "EDA":
 
