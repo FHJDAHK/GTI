@@ -275,12 +275,16 @@ if page == "Overview":
 
 elif page == "EDA":
 
-     if "_entered_eda" not in st.session_state or not st.session_state._entered_eda:
-        st.session_state._entered_eda = True
-        st.session_state.show_eda = False
-     
      if "show_eda" not in st.session_state:
         st.session_state.show_eda = False
+     if "current_page" not in st.session_state:
+        st.session_state.current_page = ""
+     
+     if st.session_state.current_page != "EDA":
+        st.session_state.show_eda = False
+
+     st.session_state.current_page = "EDA"
+
      
      if not st.session_state.show_eda:
       st.markdown("""
