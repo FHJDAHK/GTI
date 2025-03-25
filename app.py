@@ -357,7 +357,7 @@ elif page == "EDA":
          uniformtext_mode='hide'
       )
 
-         st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, use_container_width=True)
 
         # Data Table
          st.subheader("Top 10 Countries Data")
