@@ -277,7 +277,7 @@ if page != "EDA":
 
 elif page == "EDA":
 
-     if "show_eda" not in st.session_state:
+    if "show_eda" not in st.session_state:
      st.session_state.show_eda = False
 
      if not st.session_state.show_eda:
