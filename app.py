@@ -336,7 +336,7 @@ elif page == "EDA":
          "Mali": "🇲🇱 Mali",
          "Myanmar": "🇲🇲 Myanmar",
          "Syria": "🇸🇾 Syria"
-      }
+        }
          top_countries["Country+Flag"] = top_countries["Country"].map(flag_map)
 
          fig = px.bar(
