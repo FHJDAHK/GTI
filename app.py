@@ -326,11 +326,10 @@ elif page == "EDA":
 
             
          values = top_countries["Incidents"]
-         vmin = values.min() + 0.3 * (values.max() - values.min())  # Shift lower bound upward to avoid pure white
-         vmax = values.max()
          norm = mcolors.PowerNorm(gamma=0.3, vmin=values.min(), vmax=values.max())
-         colors = [cm.Reds(norm(val)) for val in values]
-
+         raw = [norm(val) for val in values]
+         compressed = [0.3 + 0.7 * r for r in raw]  # Avoid extremely pale bars
+         colors = [cm.Reds(c) for c in compressed]
 
 
          fig, ax = plt.subplots(figsize=(12, 6))
