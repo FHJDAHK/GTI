@@ -9,7 +9,7 @@ import streamlit as st
 from statsmodels.tsa.holtwinters import Holt
 import numpy as np
 import matplotlib.cm as cm
-import matplotlib.colors as mcolor
+import matplotlib.colors as mcolors
     
 
 
