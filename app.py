@@ -274,9 +274,13 @@ if page == "Overview":
 
 
 elif page == "EDA":
-     if "last_page" not in st.session_state or st.session_state.last_page != "EDA":
-        st.session_state.show_eda = False
-        st.session_state.last_page = "EDA"
+     if "show_eda" not in st.session_state:
+         st.session_state.show_eda = False
+
+     params = st.experimental_get_query_params()
+     show_eda_flag = params.get("show_eda", ["0"])[0]  # 若无参数则默认为 "0"
+     st.session_state.show_eda = (show_eda_flag == "1")
+         
          
      if not st.session_state.show_eda:
       st.markdown("""
@@ -297,14 +301,15 @@ elif page == "EDA":
         <p style='text-align: center; font-size:16px; color:gray;'>
             👉 Click <b>'Explore Data 🔍'</b> to explore the data.
         </p>
-    """, unsafe_allow_html=True)
+    """, 
+      st.markdown(intro_md, unsafe_allow_html=True)
 
       image = Image.open("11.webp")  
       st.image(image, use_container_width=True)
     
-      if st.button("Explore Data 🔍", key="explore_button"):
-          st.session_state.show_eda = True
-          st.rerun()
+      if st.button("Explore Data 🔍"):
+          st.experimental_set_query_params(show_eda="1")  # 将查询参数标记为已进入EDA内容
+          st.experimental_rerun() 
    
      else:
          
