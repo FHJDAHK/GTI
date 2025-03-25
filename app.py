@@ -279,9 +279,14 @@ elif page == "EDA":
         st.session_state.show_eda = False
      if "clicked_eda_button" not in st.session_state:
         st.session_state.clicked_eda_button = False
+     if "active_page" not in st.session_state:
+        st.session_state.active_page = ""
      
-     if not st.session_state.clicked_eda_button:
+     if st.session_state.active_page != "EDA":
         st.session_state.show_eda = False
+        st.session_state.clicked_eda_button = False
+
+      st.session_state.active_page = "EDA"
 
      
      if not st.session_state.show_eda:
@@ -311,6 +316,7 @@ elif page == "EDA":
       if st.button("Explore Data 🔍"):
          st.session_state.show_eda = True
          st.session_state.clicked_eda_button = True
+         st.rerun()
    
      else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
