@@ -411,11 +411,12 @@ elif page == "EDA":
          st.markdown("""
            <h2 style='text-align: center;'>Global Terrorism Trends (2012-2022)</h2>
            <p style='font-size:18px;'>
-           This line chart illustrates the trends in global terrorist incidents (Total Incidents), fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
+           This line chart illustrates the trends in global terrorist hostages （Total Hostages）, fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
            </p>
 
            <p style='font-size:18px;'>
            From the chart, it is evident that the total number of hostages (green) has remained relatively stable, But after a sharp surge to a decade-high in 2018-2020, it fell sharply. This may be due to some large events. For example, the rise may be due to a concentration of high-impact kidnappings in conflict-prone areas such as Nigeria or Afghanistan. Then it fell sharply due to the global damage caused by the COVID-19 pandemic.
+           
            Fatalities (orange) peaked between 2014 and 2016 but have gradually declined, suggesting that the lethality of attacks has decreased over time.  
  
            Injuries (blue) fluctuated significantly between 2012 and 2017 but showed an overall downward trend afterward, indicating that while the impact of terrorist attacks varied, their overall destructive capacity has diminished, potentially due to changes in attack methods.  
