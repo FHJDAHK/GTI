@@ -326,7 +326,7 @@ elif page == "EDA":
      tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
-     with tab1:
+      with tab1:
          st.markdown("## 📌 Top 10 Most Affected Countries")
         
         # Aggregating data to find top affected countries
@@ -376,7 +376,7 @@ elif page == "EDA":
 
 
     # 📈 Global Terrorism Trends Over the Years
-     with tab2:
+      with tab2:
          st.markdown("## 📈 Global Terrorism Trends Over the Years")
 
    
@@ -428,7 +428,7 @@ elif page == "EDA":
           """, unsafe_allow_html=True)
 
     #🔥 Terrorism Score vs Severity
-     with tab3:
+      with tab3:
          st.markdown("## 🔥 Correlation Heatmap: Terrorism Score vs Severity")
          st.write("This heatmap visualizes the correlation between terrorism scores, attack incidents, fatalities, injuries, and hostage situations.")
 
@@ -469,7 +469,7 @@ elif page == "EDA":
 
         
     # 🌍 Geographic Analysis
-     with tab4:
+      with tab4:
          st.markdown("## 🌍 Global Terrorism Incidents by Country")
          st.write("This map visualizes the distribution of terrorist incidents around the world based on the frequency of attacks.")
          
