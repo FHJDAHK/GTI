@@ -308,8 +308,8 @@ elif page == "EDA":
         st.session_state.show_eda = True
         st.rerun()
        
-       image = Image.open("11.webp")  
-       st.image(image, use_container_width=True)
+        image = Image.open("11.webp")  
+        st.image(image, use_container_width=True)
 
   
     
