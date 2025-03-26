@@ -355,7 +355,7 @@ elif page == "EDA":
          st.markdown("""
            <h2 style='text-align: center;'>Global Terrorism Impact: Top 10 Most Affected Countries</h2>
            <p style='font-size:18px;'>
-           This visualization presents the top 10 countries most affected by terrorism, combining bar charts, and data tables. plots to provide a comprehensive view of terrorism incidents worldwide.  
+           This visualization presents the top 10 countries most affected by terrorism, combining bar charts and data tables. plots to provide a comprehensive view of terrorism incidents worldwide.  
            The data clearly illustrates the unequal distribution of terrorist attacks, with some nations experiencing significantly higher numbers of incidents compared to others.
            </p>
 
