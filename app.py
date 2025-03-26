@@ -337,19 +337,24 @@ elif page == "EDA":
            "Myanmar": "mm",
            "Syria": "sy"
          }          
-         top_countries["Country+Flag"] = top_countries["Country"].map(
-                lambda x: f"<img src='https://flagcdn.com/w40/{flag_map[x]}.png' width='20'> {x}"
+         top_countries["Flag"] = top_countries["Country"].map(
+               lambda x: f"https://flagcdn.com/w40/{flag_map[x]}.png"
         )
             
          fig = px.bar(
             top_countries,
-            x="Country+Flag",
+            x="Country",
             y="Incidents",
             color="Incidents",
-            color_continuous_scale=["#FFD700", "#FF5733", "#880000"],  # Gold → Red gradient
+            color_continuous_scale=["#FFD700", "#FF5733", "#880000"], 
             text="Incidents",
             title="Top 10 Countries with Highest Terrorism Incidents"
         )
+          fig.update_traces(
+            textposition="outside",
+            hovertemplate="<b>%{x}</b><br>Incidents: %{y}<br><br>"
+                         + "<img src='%{customdata[0]}' width='40'>"
+       )
  
          fig.update_traces(textposition="outside")
          fig.update_layout(
