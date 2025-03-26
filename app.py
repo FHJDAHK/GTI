@@ -315,7 +315,7 @@ elif page == "EDA":
             
      else:
       query_params = st.experimental_get_query_params()
-        if "scroll" in query_params and query_params["scroll"][0] == "top":
+      if "scroll" in query_params and query_params["scroll"][0] == "top":
             st.markdown("""
                 <script>
                     window.scrollTo(0, 0);
