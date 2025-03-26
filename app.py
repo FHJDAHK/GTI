@@ -284,7 +284,7 @@ elif page == "EDA":
         st.session_state.show_eda = False
 
      if not st.session_state.show_eda:
-      st.markdown("""
+        st.markdown("""
         <h1 style='text-align: center; color: #3366CC;'>🔍 Exploratory Data Analysis (EDA)</h1>
         <p style='text-align: center; font-size:18px;'>
             Welcome to the **Exploratory Data Analysis Dashboard**!  
@@ -302,7 +302,7 @@ elif page == "EDA":
         <p style='text-align: center; font-size:16px; color:gray;'>
             👉 Click <b>'Explore Data 🔍'</b> to explore the data.
         </p>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
        
       image = Image.open("11.webp")  
       st.image(image, use_container_width=True)
