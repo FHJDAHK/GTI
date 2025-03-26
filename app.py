@@ -396,7 +396,7 @@ elif page == "EDA":
     
          fig, ax = plt.subplots(figsize=(10, 5))
 
-          ax.plot(global_trend["Year"], global_trend["Hostages"], marker="o", linestyle="-.", label="Total Hostages")
+         ax.plot(global_trend["Year"], global_trend["Hostages"], marker="o", linestyle="-.", label="Total Hostages")
          ax.plot(global_trend["Year"], global_trend["Fatalities"], marker="s", linestyle="--", label="Total Fatalities", alpha=0.7)
          ax.plot(global_trend["Year"], global_trend["Injuries"], marker="^", linestyle=":", label="Total Injuries", alpha=0.7)
 
