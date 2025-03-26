@@ -469,7 +469,7 @@ elif page == "EDA":
 
         
     # 🌍 Geographic Analysis
-        with tab4:
+     with tab4:
          st.markdown("## 🌍 Global Terrorism Incidents by Country")
          st.write("This map visualizes the distribution of terrorist incidents around the world based on the frequency of attacks.")
          
