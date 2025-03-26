@@ -316,6 +316,13 @@ elif page == "EDA":
     
     
      else:
+
+         components.html("""
+        <script>
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        </script>
+    """, height=0)
+         
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
@@ -366,9 +373,6 @@ elif page == "EDA":
            </p>
            """, unsafe_allow_html=True)
 
-
-
-         
 
 
     # 📈 Global Terrorism Trends Over the Years
