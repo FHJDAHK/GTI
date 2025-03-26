@@ -308,9 +308,9 @@ elif page == "EDA":
       st.image(image, use_container_width=True)
 
          
-    if st.button("Explore Data 🔍"):
-       st.session_state.show_eda = True
-       st.rerun()
+     if st.button("Explore Data 🔍"):
+        st.session_state.show_eda = True
+        st.rerun()
 
   
     
