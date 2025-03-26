@@ -8,9 +8,7 @@ import base64
 import streamlit as st
 from statsmodels.tsa.holtwinters import Holt
 import numpy as np
-import matplotlib.cm as cm
-import matplotlib.colors as mcolors
-from matplotlib.colors import LogNorm
+
     
 
 
