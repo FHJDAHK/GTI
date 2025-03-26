@@ -304,13 +304,13 @@ elif page == "EDA":
         </p>
     """, unsafe_allow_html=True)
        
-        image = Image.open("11.webp")  
-        st.image(image, use_container_width=True)
+       image = Image.open("11.webp")  
+       st.image(image, use_container_width=True)
 
          
-     if st.button("Explore Data 🔍"):
-        st.session_state.show_eda = True
-        st.rerun()
+    if st.button("Explore Data 🔍"):
+       st.session_state.show_eda = True
+       st.rerun()
 
   
     
