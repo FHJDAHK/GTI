@@ -402,7 +402,7 @@ elif page == "EDA":
 
          ax.set_xlabel("Year")
          ax.set_ylabel("Count")
-         ax.set_title("Global Terrorism Hostages, Fatalities, and Injuries (Yearly)")
+         ax.set_title("Global Terrorism Incident Hostages, Fatalities, and Injuries (Yearly)")
          ax.legend()
          ax.grid(True)
 
@@ -411,7 +411,7 @@ elif page == "EDA":
          st.markdown("""
            <h2 style='text-align: center;'>Global Terrorism Trends (2012-2022)</h2>
            <p style='font-size:18px;'>
-           This line chart illustrates the trends in global terrorist hostages （Total Hostages）, fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
+           This line chart illustrates the trends in global terrorist incident hostages（Total Hostages）, fatalities (Total Fatalities), and injuries (Total Injuries) from 2012 to 2022. 
            </p>
 
            <p style='font-size:18px;'>
