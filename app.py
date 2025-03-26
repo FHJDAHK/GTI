@@ -336,12 +336,12 @@ elif page == "EDA":
            "Mali": "ml",
            "Myanmar": "mm",
            "Syria": "sy"
-           }
-               top_countries["Country+Flag"] = top_countries["Country"].map(
+         }          
+         top_countries["Country+Flag"] = top_countries["Country"].map(
                 lambda x: f"<img src='https://flagcdn.com/w40/{flag_map[x]}.png' width='20'> {x}"
         )
             
-          fig = px.bar(
+         fig = px.bar(
             top_countries,
             x="Country+Flag",
             y="Incidents",
