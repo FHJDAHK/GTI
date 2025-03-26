@@ -303,13 +303,14 @@ elif page == "EDA":
             👉 Click <b>'Explore Data 🔍'</b> to explore the data.
         </p>
     """, unsafe_allow_html=True)
-   
-     if st.button("Explore Data 🔍"):
-        st.session_state.show_eda = True
-        st.rerun()
        
         image = Image.open("11.webp")  
         st.image(image, use_container_width=True)
+
+         
+     if st.button("Explore Data 🔍"):
+        st.session_state.show_eda = True
+        st.rerun()
 
   
     
