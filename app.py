@@ -309,6 +309,7 @@ elif page == "EDA":
     
       if st.button("Explore Data 🔍"):
           st.session_state.show_eda = True
+          st.markdown('<meta http-equiv="refresh" content="0; URL=#chart">', unsafe_allow_html=True)
           st.rerun()
    
      else:
@@ -339,17 +340,10 @@ elif page == "EDA":
             uniformtext_minsize=8,
             uniformtext_mode='hide'
          )
+            
+         st.markdown('<a name="chart"></a>', unsafe_allow_html=True)
 
          st.plotly_chart(fig, use_container_width=True)
-
-         st.markdown("""
-           <script>
-              window.scrollTo(0, 0);
-           </script>
-  """, unsafe_allow_html=True)
-
-  
-         
     
 
         # Data Table
