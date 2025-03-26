@@ -348,20 +348,7 @@ elif page == "EDA":
          st.write(top_countries)
 
 
-         st.markdown("""
-           <h2 style='text-align: center;'>Global Terrorism Impact: Top 10 Most Affected Countries</h2>
-           <p style='font-size:18px;'>
-           This visualization presents the top 10 countries most affected by terrorism, combining bar charts and data tables. plots to provide a comprehensive view of terrorism incidents worldwide.  
-           The data clearly illustrates the unequal distribution of terrorist attacks, with some nations experiencing significantly higher numbers of incidents compared to others.
-           </p>
-
-           <p style='font-size:18px;'>
-           From the data, it is evident that Iraq, Afghanistan, Pakistan, and Somalia bear the highest burden of terrorist activities, with incident numbers far exceeding those in other regions.  
-           A sharp decline in incidents is observed from India onwards, indicating that the impact of terrorism is not evenly distributed geographically but rather concentrated in specific regions.  
-           Certain countries are significantly more vulnerable to attacks compared to others, emphasizing the need for targeted security measures and geopolitical analysis.
-           </p>
-           """, unsafe_allow_html=True)
-
+         
 
 
     # 📈 Global Terrorism Trends Over the Years
