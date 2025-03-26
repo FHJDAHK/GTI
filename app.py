@@ -1,4 +1,4 @@
-import streamlit as st
+ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -304,8 +304,8 @@ elif page == "EDA":
         </p>
     """, unsafe_allow_html=True)
        
-    image = Image.open("11.webp")  
-       st.image(image, use_container_width=True)
+        image = Image.open("11.webp")  
+        st.image(image, use_container_width=True)
 
          
     if st.button("Explore Data 🔍"):
