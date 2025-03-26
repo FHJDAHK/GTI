@@ -324,50 +324,27 @@ elif page == "EDA":
          country_counts = data.groupby("Country")["Incidents"].sum().reset_index()
          top_countries = country_counts.sort_values(by="Incidents", ascending=False).head(10)
 
-            
-         flag_map = {
-           "Iraq": "iq",
-           "Afghanistan": "af",
-           "Pakistan": "pk",
-           "Somalia": "so",
-           "India": "in",
-           "Nigeria": "ng",
-           "Colombia": "co",
-           "Mali": "ml",
-           "Myanmar": "mm",
-           "Syria": "sy"
-         }          
-         top_countries["Flag"] = top_countries["Country"].map(
-               lambda x: f"https://flagcdn.com/w40/{flag_map[x]}.png"
-        )
-            
          fig = px.bar(
             top_countries,
             x="Country",
             y="Incidents",
             color="Incidents",
-            color_continuous_scale=["#FFD700", "#FF5733", "#880000"], 
+            color_continuous_scale="Reds",
             text="Incidents",
             title="Top 10 Countries with Highest Terrorism Incidents"
         )
-         fig.update_traces(
-            textposition="outside",
-            hovertemplate="<b>%{x}</b><br>Incidents: %{y}<br><br>"
-                         + "<img src='%{customdata[0]}' width='40'>"
-       )
- 
          fig.update_traces(textposition="outside")
          fig.update_layout(
-             xaxis_title="Country",
-             yaxis_title="Number of Incidents",
-             coloraxis_showscale=False,
-             uniformtext_minsize=8,
-             uniformtext_mode='hide',
-             xaxis_tickangle=-30
-        )
+            xaxis_title="Country",
+            yaxis_title="Number of Incidents",
+            coloraxis_showscale=False,
+            uniformtext_minsize=8,
+            uniformtext_mode='hide'
+         )
 
-         fig.update_xaxes(tickfont=dict(size=10))
          st.plotly_chart(fig, use_container_width=True)
+  
+         
     
 
         # Data Table
