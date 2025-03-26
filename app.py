@@ -384,7 +384,7 @@ elif page == "EDA":
 
     
          global_trend = df.groupby("Year").agg({
-             "Incidents": "sum",
+             "Hostages": "sum",
              "Fatalities": "sum",
              "Injuries": "sum"
          }).reset_index()
@@ -396,17 +396,16 @@ elif page == "EDA":
     
          fig, ax = plt.subplots(figsize=(10, 5))
 
-         ax.plot(global_trend["Year"], global_trend["Incidents"], marker="o", linestyle="-", label="Total Incidents")
+          ax.plot(global_trend["Year"], global_trend["Hostages"], marker="o", linestyle="-.", label="Total Hostages")
          ax.plot(global_trend["Year"], global_trend["Fatalities"], marker="s", linestyle="--", label="Total Fatalities", alpha=0.7)
          ax.plot(global_trend["Year"], global_trend["Injuries"], marker="^", linestyle=":", label="Total Injuries", alpha=0.7)
 
          ax.set_xlabel("Year")
          ax.set_ylabel("Count")
-         ax.set_title("Global Terrorism Incidents, Fatalities, and Injuries (Yearly)")
+         ax.set_title("Global Terrorism Hostages, Fatalities, and Injuries (Yearly)")
          ax.legend()
          ax.grid(True)
 
-    
          st.pyplot(fig)
 
          st.markdown("""
