@@ -350,7 +350,7 @@ elif page == "EDA":
             text="Incidents",
             title="Top 10 Countries with Highest Terrorism Incidents"
         )
-          fig.update_traces(
+         fig.update_traces(
             textposition="outside",
             hovertemplate="<b>%{x}</b><br>Incidents: %{y}<br><br>"
                          + "<img src='%{customdata[0]}' width='40'>"
