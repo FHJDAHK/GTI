@@ -310,18 +310,18 @@ elif page == "EDA":
          
         if st.button("Explore Data 🔍"):
            st.session_state.show_eda = True
-           st.experimental_set_query_params(scroll="top")
+           st.query_params["scroll"] = "top"
            st.rerun()
             
      else:
-      query_params = st.experimental_get_query_params()
-      if "scroll" in query_params and query_params["scroll"][0] == "top":
+      query_params = st.query_params  # ✅ 新版方式获取参数
+      if "scroll" in query_params and query_params["scroll"] == "top":
             st.markdown("""
                 <script>
                     window.scrollTo(0, 0);
                 </script>
             """, unsafe_allow_html=True)
-            st.experimental_set_query_params() 
+            st.query_params.clear()
       tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
