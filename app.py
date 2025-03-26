@@ -308,15 +308,14 @@ elif page == "EDA":
       st.image(image, use_container_width=True)
 
          
-      if st.button("Explore Data 🔍"):
-         st.session_state.show_eda = True
-         st.rerun()
-
+       if st.button("Explore Data 🔍"):
+          st.session_state.show_eda = True
+          st.rerun()
+ 
   
     
     
-      else:
-         
+       else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
