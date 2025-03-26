@@ -351,8 +351,8 @@ elif page == "EDA":
             title="Top 10 Countries with Highest Terrorism Incidents"
         )
  
-          fig.update_traces(textposition="outside")
-          fig.update_layout(
+         fig.update_traces(textposition="outside")
+         fig.update_layout(
              xaxis_title="Country",
              yaxis_title="Number of Incidents",
              coloraxis_showscale=False,
@@ -361,16 +361,16 @@ elif page == "EDA":
              xaxis_tickangle=-30
         )
 
-           fig.update_xaxes(tickfont=dict(size=10))
-           st.plotly_chart(fig, use_container_width=True)
+         fig.update_xaxes(tickfont=dict(size=10))
+         st.plotly_chart(fig, use_container_width=True)
     
 
         # Data Table
-          st.subheader("Top 10 Countries Data")
-          st.write(top_countries)
+         st.subheader("Top 10 Countries Data")
+         st.write(top_countries)
 
 
-          st.markdown("""
+         st.markdown("""
            <h2 style='text-align: center;'>Global Terrorism Impact: Top 10 Most Affected Countries</h2>
            <p style='font-size:18px;'>
            This visualization presents the top 10 countries most affected by terrorism, combining bar charts, data tables, and horizontal bar plots to provide a comprehensive view of terrorism incidents worldwide.  
