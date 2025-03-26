@@ -341,6 +341,13 @@ elif page == "EDA":
          )
 
          st.plotly_chart(fig, use_container_width=True)
+
+         st.markdown("""
+           <script>
+              window.scrollTo(0, 0);
+           </script>
+  """, unsafe_allow_html=True)
+
   
          
     
