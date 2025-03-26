@@ -315,7 +315,7 @@ elif page == "EDA":
   
     
     
-       else:
+     else:
         tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
      
     # 📌 Top 10 Most Affected Countries
