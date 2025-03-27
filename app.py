@@ -393,9 +393,7 @@ elif page == "EDA":
          st.write("### Yearly Aggregated Data")
          st.dataframe(global_trend) 
 
-          theme = st.radio("🎨 Select Chart Theme", ["Minimalist", "With Gridlines"], horizontal=True)
-
-    
+        
          df_melted = global_trend.melt(id_vars="Year", 
                                   value_vars=["Hostages", "Fatalities", "Injuries"],
                                   var_name="Type", value_name="Count")
@@ -411,37 +409,25 @@ elif page == "EDA":
                   })
 
          fig.update_traces(mode="lines+markers")
-         if theme == "Minimalist":
-             fig.update_layout(
-                template="simple_white",
-                showlegend=True,
-                hovermode="x unified",
-                xaxis_title="Year",
-                yaxis_title="People Count",
-                yaxis_tickformat=",",
-                xaxis=dict(showgrid=False),
-                yaxis=dict(showgrid=False),
-            )
-         else: 
-             fig.update_layout(
-               legend_title_text="Category",
-               hovermode="x unified",
-               xaxis_title="Year",
-               yaxis_title="People Count",
-               yaxis_tickformat=",",  
-               template="simple_white",
-               xaxis=dict(
-                 showgrid=True,
-                 gridcolor='lightgrey',
+         
+         fig.update_layout(
+            legend_title_text="Category",
+            hovermode="x unified",
+            xaxis_title="Year",
+            yaxis_title="People Count",
+            yaxis_tickformat=",",  
+            template="simple_white",
+            xaxis=dict(
+                showgrid=True,
+                gridcolor='lightgrey',
                 gridwidth=1
              ),
-               yaxis=dict(
-                 showgrid=True,
-                 gridcolor='lightgrey',
-                 gridwidth=1
+            yaxis=dict(
+                showgrid=True,
+                gridcolor='lightgrey',
+                gridwidth=1
              )
          )
-
           
          st.plotly_chart(fig, use_container_width=True)
          
