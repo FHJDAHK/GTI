@@ -417,6 +417,8 @@ elif page == "EDA":
              yaxis_tickformat=",",  
              template="simple_white"
          )
+
+          
          st.plotly_chart(fig, use_container_width=True)
          
 
