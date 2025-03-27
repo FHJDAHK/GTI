@@ -415,7 +415,7 @@ elif page == "EDA":
              xaxis_title="Year",
              yaxis_title="People Count",
              yaxis_tickformat=",",  
-             template="simple_white"，
+             template="simple_white",
              xaxis=dict(
                showgrid=True,
                gridcolor='lightgrey',
