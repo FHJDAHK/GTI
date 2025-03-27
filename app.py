@@ -459,17 +459,16 @@ elif page == "EDA":
 
          fig = px.imshow(
            correlation_matrix,
-           text_auto=True,  # 在格子中显示数值
-           color_continuous_scale="RdBu_r",  # 红蓝渐变
+           text_auto=True, 
+           color_continuous_scale="RdBu_r",  
            zmin=-1,
            zmax=1,
            aspect="auto",
            title=" 🔥 Correlation Heatmap: Interactive"
        )
 
-         fig.data[0].colorbar.title = "Correlation"
-         fig.data[0].colorbar.tickfont.size = 10
-         fig.data[0].colorbar.titlefont.size = 10
+         fig.data[0].colorbar.title = dict(text="Correlation", font=dict(size=10))
+         fig.data[0].colorbar.tickfont = dict(size=10)
 
          fig.update_layout(
             width=450,  
