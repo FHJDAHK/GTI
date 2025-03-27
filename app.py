@@ -394,19 +394,31 @@ elif page == "EDA":
          st.dataframe(global_trend) 
 
     
-         fig, ax = plt.subplots(figsize=(10, 5))
+         df_melted = global_trend.melt(id_vars="Year", 
+                                  value_vars=["Hostages", "Fatalities", "Injuries"],
+                                  var_name="Type", value_name="Count")
 
-         ax.plot(global_trend["Year"], global_trend["Hostages"], marker="o", linestyle="-.", label="Total Hostages")
-         ax.plot(global_trend["Year"], global_trend["Fatalities"], marker="s", linestyle="--", label="Total Fatalities", alpha=0.7)
-         ax.plot(global_trend["Year"], global_trend["Injuries"], marker="^", linestyle=":", label="Total Injuries", alpha=0.7)
+         fig = px.line(df_melted, x="Year", y="Count", color="Type",
+                  markers=True,
+                  line_dash="Type",  
+                  title="Global Terrorism Trends: Hostages, Fatalities, Injuries",
+                  color_discrete_map={
+                      "Hostages": "green",
+                      "Fatalities": "orange",
+                      "Injuries": "royalblue"
+                  })
 
-         ax.set_xlabel("Year")
-         ax.set_ylabel("Count")
-         ax.set_title("Global Terrorism Incident Hostages, Fatalities, and Injuries (Yearly)")
-         ax.legend()
-         ax.grid(True)
-
-         st.pyplot(fig)
+         fig.update_traces(mode="lines+markers")
+         fig.update_layout(
+             legend_title_text="Category",
+             hovermode="x unified",
+             xaxis_title="Year",
+             yaxis_title="People Count",
+             yaxis_tickformat=",",  
+             template="simple_white"
+         )
+         st.plotly_chart(fig, use_container_width=True)
+         
 
          st.markdown("""
            <h2 style='text-align: center;'>Global Terrorism Trends (2012-2022)</h2>
