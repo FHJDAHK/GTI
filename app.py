@@ -464,7 +464,7 @@ elif page == "EDA":
            zmin=-1,
            zmax=1,
            aspect="auto",
-           title=" 🔥 Correlation Heatmap: Interactive"
+           title=" 🔥 Correlation Heatmap: Terrorism Score vs Severity"
        )
 
          fig.data[0].colorbar.title = dict(text="Correlation", font=dict(size=10))
