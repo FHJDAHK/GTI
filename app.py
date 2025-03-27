@@ -416,6 +416,16 @@ elif page == "EDA":
              yaxis_title="People Count",
              yaxis_tickformat=",",  
              template="simple_white"
+             xaxis=dict(
+               showgrid=True,
+               gridcolor='lightgrey',
+               gridwidth=1
+           ),
+             yaxis=dict(
+               showgrid=True,
+               gridcolor='lightgrey',
+               gridwidth=1
+           )
          )
 
           
