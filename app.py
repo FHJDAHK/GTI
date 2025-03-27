@@ -314,7 +314,7 @@ elif page == "EDA":
            st.rerun()
             
      else:
-      query_params = st.query_params  # ✅ 新版方式获取参数
+      query_params = st.query_params  
       if "scroll" in query_params and query_params["scroll"] == "top":
             st.markdown("""
                 <script>
@@ -393,6 +393,8 @@ elif page == "EDA":
          st.write("### Yearly Aggregated Data")
          st.dataframe(global_trend) 
 
+          theme = st.radio("🎨 Select Chart Theme", ["Minimalist", "With Gridlines"], horizontal=True)
+
     
          df_melted = global_trend.melt(id_vars="Year", 
                                   value_vars=["Hostages", "Fatalities", "Injuries"],
@@ -409,23 +411,35 @@ elif page == "EDA":
                   })
 
          fig.update_traces(mode="lines+markers")
-         fig.update_layout(
-             legend_title_text="Category",
-             hovermode="x unified",
-             xaxis_title="Year",
-             yaxis_title="People Count",
-             yaxis_tickformat=",",  
-             template="simple_white",
-             xaxis=dict(
-               showgrid=True,
-               gridcolor='lightgrey',
-               gridwidth=1
-           ),
-             yaxis=dict(
-               showgrid=True,
-               gridcolor='lightgrey',
-               gridwidth=1
-           )
+         if theme == "Minimalist":
+             fig.update_layout(
+                template="simple_white",
+                showlegend=True,
+                hovermode="x unified",
+                xaxis_title="Year",
+                yaxis_title="People Count",
+                yaxis_tickformat=",",
+                xaxis=dict(showgrid=False),
+                yaxis=dict(showgrid=False),
+            )
+         else: 
+             fig.update_layout(
+               legend_title_text="Category",
+               hovermode="x unified",
+               xaxis_title="Year",
+               yaxis_title="People Count",
+               yaxis_tickformat=",",  
+               template="simple_white",
+               xaxis=dict(
+                 showgrid=True,
+                 gridcolor='lightgrey',
+                gridwidth=1
+             ),
+               yaxis=dict(
+                 showgrid=True,
+                 gridcolor='lightgrey',
+                 gridwidth=1
+             )
          )
 
           
