@@ -471,7 +471,7 @@ elif page == "EDA":
          fig.data[0].colorbar.tickfont.size = 10
          fig.data[0].colorbar.titlefont.size = 10
 
-          fig.update_layout(
+         fig.update_layout(
             width=450,  
             height=400,
             margin=dict(l=10, r=10, t=50, b=10)
