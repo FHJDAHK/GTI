@@ -294,7 +294,7 @@ elif page == "EDA":
         <ul>
             <li>🌍 How do terrorist incidents vary across different regions, and which areas are most affected?</li>
             <li>📌 Which countries experience the highest number of terrorist incidents?</li>
-            <li>📈 How have terrorist incidents hostages, fatalities, and injuries evolved over time?</li>
+            <li>📈 How have hostages, fatalities, and injuries in terrorist incidents evolved over time?</li>
             <li>🔥 What factors are most correlated with terrorism severity?</li>
         </ul>
         <p style='text-align: center;'>Understanding these patterns is essential for policymakers, security agencies, and researchers working towards a safer world.</p>
