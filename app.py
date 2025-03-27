@@ -457,11 +457,11 @@ elif page == "EDA":
          selected_columns = ['Score', 'Incidents', 'Fatalities', 'Injuries', 'Hostages']
          correlation_matrix = df[selected_columns].corr()
 
-         fig, ax = plt.subplots(figsize=(3.8, 3.2))
-         sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.4, ax=ax, annot_kws={"size": 8})
-         plt.title("Correlation Heatmap: Terrorism Score vs Severity", fontsize=10)
-         plt.xticks(fontsize=8)
-         plt.yticks(fontsize=8)
+         fig, ax = plt.subplots(figsize=(3.0, 2.6))
+         sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.3, ax=ax, annot_kws={"size": 6})
+         plt.title("Correlation Heatmap: Terrorism Score vs Severity", fontsize=8)
+         plt.xticks(fontsize=6)
+         plt.yticks(fontsize=6)
 
          
          st.pyplot(fig)
