@@ -455,17 +455,31 @@ elif page == "EDA":
          st.write("This heatmap visualizes the correlation between terrorism scores, attack incidents, fatalities, injuries, and hostage situations.")
 
          selected_columns = ['Score', 'Incidents', 'Fatalities', 'Injuries', 'Hostages']
-         correlation_matrix = df[selected_columns].corr()
+         correlation_matrix = df[selected_columns].corr().round(2)
 
-         fig, ax = plt.subplots(figsize=(3.0, 2.6))
-         sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.3, ax=ax, annot_kws={"size": 6}, cbar_kws={"shrink": 0.7, "label": "Correlation"})
-         plt.title("Correlation Heatmap: Terrorism Score vs Severity", fontsize=8)
-         plt.xticks(fontsize=6)
-         plt.yticks(fontsize=6)
-         plt.tick_params(labelsize=6)
+         fig = px.imshow(
+           correlation_matrix,
+           text_auto=True,  # 在格子中显示数值
+           color_continuous_scale="RdBu_r",  # 红蓝渐变
+           zmin=-1,
+           zmax=1,
+           aspect="auto",
+           title=" 🔥 Correlation Heatmap: Interactive"
+       )
 
+         fig.update_layout(
+            coloraxis_colorbar=dict(
+            title="Correlation",
+            tickfont=dict(size=10),
+            titlefont=dict(size=10)
+          ),
+           width=450,  
+           height=400,
+           margin=dict(l=10, r=10, t=50, b=10)
+       )
+
+         st.plotly_chart(fig, use_container_width=True)
          
-         st.pyplot(fig)
          
          st.markdown("""
            <h2 style='text-align: center;'> Insights from the Correlation Heatmap</h2>
