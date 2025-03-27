@@ -322,7 +322,7 @@ elif page == "EDA":
                 </script>
             """, unsafe_allow_html=True)
             st.query_params.clear()
-      tab1, tab2, tab3, tab4 = st.tabs(["📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years", "🔥 Terrorism Score vs Severity","🌍 Geographic Analysis"])
+      tab1, tab2, tab3, tab4 = st.tabs(["🌍 Geographic Analysis", "📌 Top 10 Countries", "📈 Global Terrorism Trends Over the Years","🔥 Terrorism Score vs Severity"])
      
     # 📌 Top 10 Most Affected Countries
       with tab1:
