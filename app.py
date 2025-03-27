@@ -467,15 +467,14 @@ elif page == "EDA":
            title=" 🔥 Correlation Heatmap: Interactive"
        )
 
-         fig.update_layout(
-            coloraxis_colorbar=dict(
-            title="Correlation",
-            tickfont=dict(size=10),
-            titlefont=dict(size=10)
-          ),
-           width=450,  
-           height=400,
-           margin=dict(l=10, r=10, t=50, b=10)
+         fig.data[0].colorbar.title = "Correlation"
+         fig.data[0].colorbar.tickfont.size = 10
+         fig.data[0].colorbar.titlefont.size = 10
+
+          fig.update_layout(
+            width=450,  
+            height=400,
+            margin=dict(l=10, r=10, t=50, b=10)
        )
 
          st.plotly_chart(fig, use_container_width=True)
