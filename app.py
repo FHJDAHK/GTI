@@ -553,7 +553,7 @@ elif page == "EDA":
              Most <b>Western countries</b> (such as the <b>United States, Canada, Australia, and European nations</b>) appear in lighter shades, suggesting fewer terrorist incidents. This may indicate more effective security controls and counter-terrorism measures in these countries.
              </p>
 
-             <p style='font-size:18px; font-weight: bold; color: #D32F2F;'>
+             <p style='font-size:18px; font-weight: bold;'>
              These trends highlight the importance of the global fight against terrorism, particularly the need to strengthen security measures and international cooperation in conflict-prone regions to reduce the threat of terrorism.
              </p>
              """, unsafe_allow_html=True)
